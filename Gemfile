@@ -25,6 +25,7 @@ gem 'sorcery'
 
 group :development do
 	gem 'better_errors'
+	gem 'pry-rails'
 end
 
 group :tools do
