@@ -21,10 +21,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'sorcery'
 
 group :development do
 	gem 'better_errors'
-	gem 'pry_rails'
 end
 
 group :tools do
