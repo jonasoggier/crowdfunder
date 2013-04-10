@@ -1,10 +1,7 @@
 require 'test_helper'
 
 class ProjectFlowsTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
-
+  
   test "the index page lists all our projects" do
   	project1 = FactoryGirl.create(:project)
   	project2 = FactoryGirl.create(:project, title: "Waterproof Whiteboard")

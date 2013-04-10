@@ -3,3 +3,25 @@
 <p>
 	A project by <%= @project.user.first_name %> <%= @project.user.last_name %>
 </p>
+
+<%= form_for([@project, @pledge]) do |f| %>
+  <% if @pledge.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pledge.errors.count, "error") %> prohibited this pledge from being saved:</h2>
+
+      <ul>
+      <% @pledge.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<div class="field">
+    <%= f.label :amount %><br />
+    <%= f.text_field :amount %>
+  </div>
+  <div class="btn btn-primary">
+    <%= f.submit "Pledge Now" %>
+  </div>
+<% end %>
