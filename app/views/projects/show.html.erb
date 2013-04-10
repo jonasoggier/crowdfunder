@@ -4,10 +4,15 @@
 	A project by <%= @project.user.first_name %> <%= @project.user.last_name %>
 </p>
 
+<!-- amount_raised defined in projects_helper -->
+<h3>Total amount raised: <%= amount_raised %></h3> 
+
+<p><%= flash[:notice] %></p>
+
 <%= form_for([@project, @pledge]) do |f| %>
   <% if @pledge.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@pledge.errors.count, "error") %> prohibited this pledge from being saved:</h2>
+    <div id="error_explanation" class="alert alert-error">
+      <h3><%= pluralize(@pledge.errors.count, "error") %> prohibited this pledge from being saved:</h3>
 
       <ul>
       <% @pledge.errors.full_messages.each do |msg| %>
@@ -21,7 +26,7 @@
     <%= f.label :amount %><br />
     <%= f.text_field :amount %>
   </div>
-  <div class="btn btn-primary">
-    <%= f.submit "Pledge Now" %>
+  <div>
+    <%= f.submit "Pledge Now", class: "btn btn-primary" %>
   </div>
 <% end %>

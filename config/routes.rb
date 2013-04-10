@@ -3,7 +3,7 @@ Crowdfunder::Application.routes.draw do
 	root :to => 'welcome#index'  
   
   resources :projects do
-  	resources :pledges, :only => [:index, :create]
+  	resources :pledges, :only => [:create]
   end
 
   resources :users, :except => [:index, :destroy]
