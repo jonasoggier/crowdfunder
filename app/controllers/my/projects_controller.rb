@@ -7,13 +7,13 @@ class My::ProjectsController < ApplicationController
   end
 
   def new
-    @project = current_user.projects.build
+    @project = Project.new
   end
 
   def create
     @project = current_user.projects.build params[:project]
     if @project.save
-      redirect_to @project, notice: "Project successfully created."
+      redirect_to @project, :notice => "Project successfully created."
     else
       render :new
     end
@@ -25,7 +25,6 @@ class My::ProjectsController < ApplicationController
     
   def update    
     @project = Project.find(params[:id])
- 
     if @project.update_attributes(params[:project])
       redirect_to @project, :notice => 'Project was successfully updated.'
     else
@@ -34,5 +33,8 @@ class My::ProjectsController < ApplicationController
   end
 
   def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    redirect_to my_projects_path, :notice => 'Project was successfully deleted.'
   end
 end

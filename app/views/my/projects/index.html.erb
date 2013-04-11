@@ -1,6 +1,10 @@
 <h1 class="offset1">My Projects</h1>
 
-<%= button_to "Create New Project", new_my_project_path, :class => "btn btn-primary offset1" %>
+<br>
+
+<%= link_to "Create New Project", new_my_project_path, :class => "btn btn-primary offset1" %>
+
+<br>
 
 <% @projects.each do |project| %>
 	<ul class="offset1">

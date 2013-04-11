@@ -8,9 +8,10 @@ class PledgesController < ApplicationController
     @pledge.user = current_user
 
   	if @pledge.save 
+      UserMailer.new_pledge(@pledge).deliver
   		redirect_to @project  
   		flash[:notice] = "Thanks for supporting this project!"
-  	else
+    else
   		render 'projects/show' 
   		#flash[:notice] = "Uups...something went wrong. Try again!"
   	end

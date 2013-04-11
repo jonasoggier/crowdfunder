@@ -12,6 +12,5 @@ Crowdfunder::Application.routes.draw do
 	namespace :my do
 		resources :projects
 	end
-
  
 end
