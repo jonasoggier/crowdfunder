@@ -1,9 +1,16 @@
-<h2>Edit your project information</h2>
-
-<%= form_for @project do |f| %>
+<%= form_for [:my, @project] do |f| %>
 
   <% unless f.object.errors.empty? %>
-    <%= render 'shared/form_errors', :f => f %>
+    <% if @project.errors.any? %>
+  		<div id="error_explanation" class="alert alert-error">
+    		<h3><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h3>
+			<ul>
+    		<% @project.errors.full_messages.each do |msg| %>
+      		<li><%= msg %></li>
+    		<% end %>
+    	</ul>
+  		</div>
+ 		<% end %>
   <% end %>
 
   <div class="span6">

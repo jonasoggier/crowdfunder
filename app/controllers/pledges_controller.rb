@@ -4,11 +4,9 @@ class PledgesController < ApplicationController
 
 	def create
   	@project = Project.find(params[:project_id])
-  	@pledge = Pledge.new(
-  		:amount => params[:pledge][:amount],
-  		:user_id => current_user.id,
-  		:project_id => params[:project_id])
-  	
+  	@pledge = @project.pledges.build params[:pledge]
+    @pledge.user = current_user
+
   	if @pledge.save 
   		redirect_to @project  
   		flash[:notice] = "Thanks for supporting this project!"

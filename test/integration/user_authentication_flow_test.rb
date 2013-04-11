@@ -32,7 +32,7 @@ class UserAuthenticationFlowTest < ActionDispatch::IntegrationTest
     click_button "Create Account"
     assert_equal users_path, current_path
     assert page.has_no_content?("Account created")
-    assert find('.alert').has_content?("Try again")
+    assert find('.alert').has_content?("prohibited")
   end
 
   test "successful logout" do
