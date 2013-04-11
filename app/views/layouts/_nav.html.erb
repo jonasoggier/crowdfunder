@@ -4,6 +4,8 @@
     <ul class="nav">
     	<li class="<%= "active" if controller_name == "welcome" %>"><%= link_to "Home", root_path %></li>
       <li class="<%= "active" if controller_name == "projects" %>"><%= link_to "Projects", projects_path %></li>
+      <!-- Bug re Navbar active needs to be fixed -->
+      <li class="<%= "active" if controller_name == "my::projects" %>"><%= link_to "My Projects", my_projects_path %></li> 
     </ul>
   
 
@@ -17,7 +19,7 @@
 		</div>
 
 	</div>
-	
+
 </div>
 
 

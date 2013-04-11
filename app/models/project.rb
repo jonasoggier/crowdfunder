@@ -4,6 +4,7 @@ class Project < ActiveRecord::Base
 
   attr_accessible :description, :goal, :teaser, :title
 
-  
+  validates :title, :teaser, :description, :presence => true
+  validates :goal, :numericality => { :only_integer => true }
 
 end
