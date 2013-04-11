@@ -4,13 +4,13 @@
 <hr/>
 
 <div class="container">
-<% if flash[:alert] %>
-  <div class="alert alert-success">
-    <%= flash[:alert] %>
-  </div>
-<% end %>
+  <% if flash[:alert] %>
+    <div class="alert alert-success">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
 
-<%= form_tag session_path, :method => :post do %>
+  <%= form_tag session_path, :method => :post do %>
 
   <div class="span6">
 
@@ -20,6 +20,7 @@
     <div class="form-actions">
       <%= submit_tag 'Login', class: 'btn btn-primary' %>
     </div>
+
   </div>
 
 <% end %>

@@ -1,0 +1,11 @@
+<% if @pledge.errors.any? %>
+  <div id="error_explanation" class="alert alert-error">
+    <h3><%= pluralize(@pledge.errors.count, "error") %> prohibited this pledge from being saved:</h3>
+
+    <ul>
+    <% @pledge.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+ <% end %>

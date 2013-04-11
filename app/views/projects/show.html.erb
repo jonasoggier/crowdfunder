@@ -1,8 +1,6 @@
 <h1><%= @project.title %></h1>
 
-<p>
-	A project by <%= @project.user.first_name %> <%= @project.user.last_name %>
-</p>
+<p>A project by <%= @project.user.first_name %> <%= @project.user.last_name %></p>
 
 <!-- amount_raised defined in projects_helper -->
 <h3>Total amount raised: <%= amount_raised %></h3> 
@@ -10,17 +8,8 @@
 <p><%= flash[:notice] %></p>
 
 <%= form_for([@project, @pledge]) do |f| %>
-  <% if @pledge.errors.any? %>
-    <div id="error_explanation" class="alert alert-error">
-      <h3><%= pluralize(@pledge.errors.count, "error") %> prohibited this pledge from being saved:</h3>
-
-      <ul>
-      <% @pledge.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  
+  <%= render 'shared/form_errors', :f => f %>
 
 	<div class="field">
     <%= f.label :amount %><br />
