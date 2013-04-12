@@ -5,6 +5,6 @@ class Pledge < ActiveRecord::Base
   attr_accessible :amount
 
   validates :amount, :presence => true
-  validates :amount, :numericality => { :only_integer => true }
+  validates :amount, :numericality => { :only_integer => true, greater_than: 0 }
 
 end
