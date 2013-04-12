@@ -9,8 +9,10 @@ Crowdfunder::Application.routes.draw do
   resources :users, :except => [:index, :destroy]
 	resource :session, :only => [:new, :create, :destroy]
   
-	namespace :my do
-		resources :projects
+	namespace :my do            # namespace
+		resources :projects do    # nested resources
+			 	resources :images
+		end
 	end
  
 end
