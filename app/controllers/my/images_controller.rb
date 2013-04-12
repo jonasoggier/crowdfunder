@@ -18,6 +18,12 @@ class My::ImagesController < ApplicationController
 		end
 	end
 
+	def destroy
+		@image = Image.find(params[:id])
+    @image.destroy
+    redirect_to my_project_images_path, :notice => 'Project was successfully deleted.'
+	end
+
 	protected
 
 	def get_project
