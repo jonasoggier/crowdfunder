@@ -7,15 +7,15 @@
 	<%= f.submit %>
 <% end %>
 
-<h4>This project has <%= @images.count %> images</h4>
+<h4>This project has <%= pluralize(@images.count, "image") %></h4>
 
 <br>
 
 <ul class="thumbnails">
 	<% @images.each do |img| %>
 		<li class = "span3">
-			<div class = "thumbnail">
-				<img src="<%= img.file.url %>"></img>
+			<a href = "<%= img.file.url %>">
+				<img src="<%= img.file.thumb.url %>"></img>
 			</div>
 		</li>
 	<% end %>

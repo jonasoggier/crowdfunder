@@ -26,6 +26,7 @@ gem 'sorcery'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
 gem 'carrierwave'
+gem 'mini_magick'
 
 group :development do
 	gem 'better_errors'
