@@ -3,7 +3,7 @@ class My::ProjectsController < ApplicationController
   before_filter :require_login
 
   def index
-    @projects = current_user.projects
+    @projects = current_user.projects.latest.page params[:page]
   end
 
   def new

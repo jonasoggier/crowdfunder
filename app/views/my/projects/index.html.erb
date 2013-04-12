@@ -1,4 +1,4 @@
-<h1 class="offset1">My Projects</h1>
+<h1 class="offset1">My projects <small><%= page_entries_info @projects %></small></h1>
 
 <br>
 
@@ -12,3 +12,5 @@
 		<li class = "no-bullet"><%= project.teaser %></li>
 	</ul>
 <% end %>
+
+<%= paginate @projects %>

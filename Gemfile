@@ -23,6 +23,8 @@ end
 
 gem 'jquery-rails'
 gem 'sorcery'
+gem 'kaminari'
+gem 'kaminari-bootstrap'
 
 group :development do
 	gem 'better_errors'
